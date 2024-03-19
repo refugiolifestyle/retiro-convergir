@@ -36,7 +36,7 @@ export const saveComprovante = async (dados: DadosNovaInscricao, inscritos: Insc
 
     let comprovanteDatabaseRef = refDatabase(database, path);
     let inscritosComprovante = Object.fromEntries(inscritos
-        .map(({cpf, nome, celula}) => [cpf.replaceAll(/[.-]/g, ""), {celula, nome}]))
+        .map(({cpf, nome, celula, parcelas}) => [cpf.replaceAll(/[.-]/g, ""), {celula, nome, parcelas}]))
 
     set(comprovanteDatabaseRef, {
         inscritos: inscritosComprovante,

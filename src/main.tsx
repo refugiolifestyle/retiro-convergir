@@ -24,7 +24,7 @@ addLocale('pt-BR', {
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <HashRouter basename='retiro-convergir'>
+    <HashRouter basename='/retiro-convergir'>
       <App />
     </HashRouter>
   </React.StrictMode>

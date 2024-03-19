@@ -18,38 +18,37 @@ interface Props {
 }
 
 const celulas = [
-    // {
-    //     label: 'Supervisores', code: 'supervisores',
-    //     items: [
-    //         {"label": "Rede 12", "code": 'Rede 12'},
-    //         {"label": "Rede 17", "code": 'Rede 17'},
-    //     ]
-    // },
     {
         label: 'Rede 12', code: 'rede12',
         items: [
             {"label": "Refúgio 2", "code": 2},
             {"label": "Refúgio 4", "code": 4},
-            {"label": "Refúgio 7", "code": 7},
+            {"label": "Refúgio 16", "code": 16},
+            {"label": "Refúgio 22", "code": 22},
             {"label": "Refúgio 44", "code": 44},
             {"label": "Refúgio 53", "code": 53},
+            {"label": "Refúgio 54", "code": 54},
             {"label": "Refúgio 56", "code": 56},
+            {"label": "Refúgio 68", "code": 68},
+            {"label": "Refúgio 70", "code": 70},
+            {"label": "Refúgio 87", "code": 87},
             {"label": "Refúgio 90", "code": 90},
-            {"label": "Refúgio 98", "code": 98}
+            {"label": "Refúgio 98", "code": 98},
+            {"label": "Refúgio 102", "code": 102},
+            {"label": "Refúgio 117", "code": 117},
+            {"label": "Refúgio 127", "code": 127},
+            {"label": "Refúgio 130", "code": 130},
+            {"label": "Refúgio 154", "code": 154}
         ]
     },
     {
         label: 'Rede 17', code: 'rede17',
         items: [
-            {"label": "Refúgio 22", "code": 22},
-            {"label": "Refúgio 54", "code": 54},
             {"label": "Refúgio 63", "code": 63},
-            {"label": "Refúgio 68", "code": 68},
-            {"label": "Refúgio 87", "code": 87},
             {"label": "Refúgio 94", "code": 94},
-            {"label": "Refúgio 103", "code": 103},
             {"label": "Refúgio 109", "code": 109},
-            {"label": "Refúgio 117", "code": 117}
+            {"label": "Refúgio 140", "code": 140},
+            {"label": "Refúgio 144", "code": 144}s
         ]
     },
 ];

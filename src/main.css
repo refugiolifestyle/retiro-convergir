@@ -1,0 +1,70 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 62.5%;
+
+  color-scheme: light dark;
+  color: #495057;
+  background-color: #eff3f8;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body, #root {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+}
+
+.p-menuitem-icon {
+  font-size: 1.2em;
+}
+
+.p-component,
+.p-link,
+.p-dropdown-label {
+  font-size: 1.4rem;
+}
+
+.p-dataview-header,
+.p-treetable table th,
+.p-datatable-table th {
+  background-color: var(--surface-100) !important;
+}
+
+.p-treetable table td:not(:last-child) {
+  border: 1px solid #e4e4e4 !important;
+  border-width: 0 0 1px 0 !important;
+}
+
+.p-treetable .p-paginator-bottom,
+.p-dataview .p-paginator-bottom {
+  border-width: 0;
+  margin-top: 1.4rem;
+}
+
+.p-dataview-emptymessage {
+  padding-block: 1rem !important;
+}
+
+.sm-visible {
+  display: none;
+}
+
+@media screen and (max-width: 60rem) {
+  .sm-invisible {
+      display: none;
+  }
+
+  .sm-visible {
+      display: inline;
+      margin-right: .5rem;
+  }
+}

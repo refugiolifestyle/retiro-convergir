@@ -1,0 +1,21 @@
+[
+    { "celula": "Rede 12", "rede": "Supervisores", "code": "Rede 12"},
+    { "celula": "Rede 17", "rede": "Supervisores", "code": "Rede 17"},
+    { "celula": "Refúgio 2", "rede": "Rede 12", "code": 2 },
+    { "celula": "Refúgio 4", "rede": "Rede 12", "code": 4 },
+    { "celula": "Refúgio 7", "rede": "Rede 12", "code": 7 },
+    { "celula": "Refúgio 44", "rede": "Rede 12", "code": 44 },
+    { "celula": "Refúgio 53", "rede": "Rede 12", "code": 53 },
+    { "celula": "Refúgio 56", "rede": "Rede 12", "code": 56 },
+    { "celula": "Refúgio 90", "rede": "Rede 12", "code": 90 },
+    { "celula": "Refúgio 98", "rede": "Rede 12", "code": 98 },
+    { "celula": "Refúgio 22", "rede": "Rede 17", "code": 22 },
+    { "celula": "Refúgio 54", "rede": "Rede 17", "code": 54 },
+    { "celula": "Refúgio 63", "rede": "Rede 17", "code": 63 },
+    { "celula": "Refúgio 68", "rede": "Rede 17", "code": 68 },
+    { "celula": "Refúgio 87", "rede": "Rede 17", "code": 87 },
+    { "celula": "Refúgio 94", "rede": "Rede 17", "code": 94 },
+    { "celula": "Refúgio 103", "rede": "Rede 17", "code": 103 },
+    { "celula": "Refúgio 109", "rede": "Rede 17", "code": 109 },
+    { "celula": "Refúgio 117", "rede": "Rede 17", "code": 117 }
+]

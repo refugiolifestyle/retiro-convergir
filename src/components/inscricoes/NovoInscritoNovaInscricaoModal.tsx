@@ -48,7 +48,7 @@ const celulas = [
             {"label": "Refúgio 94", "code": 94},
             {"label": "Refúgio 109", "code": 109},
             {"label": "Refúgio 140", "code": 140},
-            {"label": "Refúgio 144", "code": 144}s
+            {"label": "Refúgio 144", "code": 144}
         ]
     },
 ];

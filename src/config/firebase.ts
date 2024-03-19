@@ -21,6 +21,6 @@ const firebaseConfigTeste = {
   messagingSenderId: "693062890363",
   appId: "1:693062890363:web:1f672f47092a049b64c3de"
 };
-  export const app = initializeApp(firebaseConfigTeste);
+  export const app = initializeApp(firebaseConfig);
   export const storage = getStorage(app);
   export const database = getDatabase(app);

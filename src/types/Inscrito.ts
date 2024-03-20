@@ -24,7 +24,6 @@ export interface Inscrito {
     dataNascimento?: string;
     telefone?: string;
     observacao?: string;
-    documentos?: string[];
     convidado?: boolean;
     vendinha?: Venda[];
 }

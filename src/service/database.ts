@@ -1,7 +1,6 @@
 import {get, push, ref, set} from "firebase/database";
 import {database} from "../config/firebase";
 import {Inscrito, Parcela, Venda} from "../types/Inscrito";
-import {saveDocumentos} from "./storage";
 import {Produto} from "../types/Produto";
 
 export const consultarPermitirInscricao = async () => {
@@ -44,7 +43,6 @@ export const saveInscritos = async (inscritos: Inscrito[], comprovante: any) => 
         let inscritoGet = await consultaInscrito(inscrito);
 
         if (!inscritoGet.exists()) {
-            inscrito = await saveDocumentos(inscrito);
             inscrito.parcelas = [{
                 quantidade: inscrito.parcelas as string,
                 comprovante

@@ -50,22 +50,3 @@ export const saveComprovante = async (dados: DadosNovaInscricao, inscritos: Insc
         url
     };
 }
-
-export const saveDocumentos = async (inscrito: Inscrito) => {
-    if (inscrito.documentos) {
-        for (let i in inscrito.documentos) {
-            let documento = inscrito.documentos[i];
-            
-            let type = exportType(documento);
-            let path = `documentos/${inscrito.celula}/${inscrito.cpf}/${uuidv4()}`;
-
-            let comprovanteStorageRef = refStorage(storage, `${path}.${filetypes[type!]}`);
-            let uploadFile = await uploadString(comprovanteStorageRef, documento!, 'data_url');
-            let url = await getDownloadURL(uploadFile.ref);
-
-            inscrito.documentos[i] = url;
-        }
-    }
-
-    return inscrito;
-}

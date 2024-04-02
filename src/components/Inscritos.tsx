@@ -9,15 +9,21 @@ import { database } from '../config/firebase';
 import { parseInscritos } from '../service/datatree';
 import { Inscrito } from '../types/Inscrito';
 import * as React from "react";
+import { capitalize } from '../service/utils';
 
-const Inscritos: FC<{children?: any, header?: (Inscritos: TreeNode[]) => ReactNode}> = ({children, header}) => {
+const Inscritos: FC<{ children?: any, header?: (Inscritos: TreeNode[]) => ReactNode }> = ({ children, header }) => {
     const [nodes, setNodes] = useState<TreeNode[]>([]);
     const [globalFilter, setGlobalFilter] = useState<string | null>(null);
 
     useEffect(() => {
         let inscritosRef = ref(database, 'inscritos');
-        return onValue(inscritosRef, function(snap) {
-            let inscritosNode = parseInscritos(snap.val());
+        return onValue(inscritosRef, function (snap) {
+            let snapVal = snap.val();
+            
+            window.Inscritos = (Object.values(snapVal) as Inscrito[])
+                .reduce<Inscrito[]>((all, inscrito) => [...all, ...Object.values(inscrito)], []);
+
+            let inscritosNode = parseInscritos(snapVal);
             setNodes(inscritosNode);
         });
     }, []);
@@ -39,9 +45,10 @@ const Inscritos: FC<{children?: any, header?: (Inscritos: TreeNode[]) => ReactNo
             expander
             field="nome"
             header="Nome"
-            headerClassName="w-full" 
+            headerClassName="w-full"
             bodyClassName="w-full"
-            className="text-2xl py-3 w-full">
+            className="text-2xl py-3 w-full"
+            body={({ data }) => capitalize(data.nome, true)}>
         </Column>
         {children}
     </TreeTable>;

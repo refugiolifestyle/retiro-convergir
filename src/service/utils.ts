@@ -1,4 +1,6 @@
-import {Parcela} from "../types/Inscrito";
+import { Parcela } from "../types/Inscrito";
+import excelJS from 'exceljs';
+import downloadjs from 'downloadjs';
 
 export const calcIdade = (dtNasc?: string) => {
     if (!dtNasc) {
@@ -39,14 +41,45 @@ export const getFormatDate = (date: string) => {
     let period = Math.floor(now.getTime() - reference.getTime());
     if (period < 1000 * 60 * 60 * 24 * 7) { // segundo * minuto * hora * dia * semana
         return [
-            reference.toLocaleString('pt-BR', {weekday: "short"}),
+            reference.toLocaleString('pt-BR', { weekday: "short" }),
             "às",
-            reference.toLocaleString('pt-BR', {timeStyle: "short"})
+            reference.toLocaleString('pt-BR', { timeStyle: "short" })
         ].join(' ');
     } else {
         return [
-            reference.toLocaleString('pt-BR', {dateStyle: "short"}),
-            reference.toLocaleString('pt-BR', {timeStyle: "short"})
+            reference.toLocaleString('pt-BR', { dateStyle: "short" }),
+            reference.toLocaleString('pt-BR', { timeStyle: "short" })
         ].join(' ');
     }
+}
+
+export const capitalize = (str: string, lower = false) =>
+    (lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, match => match.toUpperCase());
+
+export const downloadXLSX = window.downloadXLSX = async (data: any[]) => {
+    if (data.length == 0) return;
+
+    const workbook = new excelJS.Workbook();
+    const worksheet = workbook.addWorksheet();
+
+    for (let rowI = 0; rowI < data.length; rowI++) {
+        let row = data[rowI];
+
+        if (rowI == 0) {
+            worksheet.columns = Object.keys(row)
+                .map(dk => ({
+                    header: capitalize(dk, true),
+                    key: dk
+                }))
+        }
+
+        worksheet.addRow(row)
+    }
+
+    let buff = await workbook.xlsx.writeBuffer()
+    let blb = new Blob([buff])
+    let filename = `${Date.now()}.xlsx`
+    let mitype = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+
+    downloadjs(blb, filename, mitype)
 }

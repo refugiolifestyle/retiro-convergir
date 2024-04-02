@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "downloadjs": "^1.4.7",
+    "exceljs": "^4.4.0",
     "firebase": "^9.16.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
